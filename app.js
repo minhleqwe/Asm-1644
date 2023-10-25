@@ -21,6 +21,7 @@ hbs.registerHelper('equal', require('handlebars-helper-equal'))
 
 
 var mongoose = require("mongoose");
+mongoose.set('strictQuery', false);
 var uri = "mongodb+srv://minhlqgch211344:1q2w3e4r@minh.eafg6qj.mongodb.net/Asm";
 mongoose.connect(uri)
 .then(() => console.log ("Connect to DB succeed !"))
@@ -57,5 +58,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.listen (process.env.PORT || 3001);
 
 module.exports = app;
