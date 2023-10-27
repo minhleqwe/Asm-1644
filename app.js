@@ -8,7 +8,11 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-
+var mongoose = require("mongoose");
+var uri = "mongodb+srv://minhlqgch211344:1q2w3e4r@minh.eafg6qj.mongodb.net/Asm";
+mongoose.connect(uri)
+.then(() => console.log ("Connect to DB succeed !"))
+.catch((err) => console.log (err));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -18,6 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.listen (process.env.PORT || 3001);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
