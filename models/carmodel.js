@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var FigureSchema = mongoose.Schema(
+var CarSchema = mongoose.Schema(
    {
       name:{
          type:String,
@@ -13,10 +13,7 @@ var FigureSchema = mongoose.Schema(
       price:{
          type:String,
       }
-      // ,date: {
-      //    type: Date,
-      // }
    }
 );
-var figuremodel = mongoose.model('figure', FigureSchema, 'figure');
-module.exports = figuremodel;
+var carmodel = mongoose.model('car', CarSchema, 'car');
+module.exports = carmodel;

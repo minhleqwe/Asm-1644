@@ -495,6 +495,7 @@
 				<a href="/toy" class="nav-item nav-link active">Toy</a>
 				<a href="/robot" class="nav-item nav-link">Robot</a>
 				<a href="/figure" class="nav-item nav-link">Figure</a>
+				<a href="/car" class="nav-item nav-link">Car</a>
 			</div>
 			<div class="searchBox">
 				<form action="/toy/search" method="post">
@@ -567,6 +568,7 @@
 							</td>
 							<td>{{name}}</td>
 							<td>{{category }}</td>
+							{{!-- <td>{{ dateFormat date "DD/MM/YYYY" }}</td> --}}
 							<td>
 								<a href="/figure/detail/{{ _id }}">
 									<img src="{{ image }}" width="150" height="150">
@@ -577,8 +579,8 @@
 								<a href="/figure/edit/{{ _id }}" class="edit"><i class="material-icons"
 										title="Edit">&#xE254;</i></a>
 								<a href="/figure/delete/{{_id}}"
-                                    onclick="return confirm('Are you sure to delete this student ?');" class="delete" ><i
-										class="material-icons"  title="Delete">&#xE872;</i></a>
+									onclick="return confirm('Are you sure to delete this student ?');" class="delete"><i
+										class="material-icons" title="Delete">&#xE872;</i></a>
 							</td>
 							{{!-- <div id="deleteEmployeeModal" class="modal fade">
 								<div class="modal-dialog">
@@ -623,8 +625,8 @@
 								<a href="/robot/edit/{{ _id }}" class="edit"><i class="material-icons"
 										title="Edit">&#xE254;</i></a>
 								<a href="/robot/delete/{{_id}}"
-                                    onclick="return confirm('Are you sure to delete this student ?');" class="delete" ><i
-										class="material-icons"  title="Delete">&#xE872;</i></a>
+									onclick="return confirm('Are you sure to delete this student ?');" class="delete"><i
+										class="material-icons" title="Delete">&#xE872;</i></a>
 							</td>
 							{{!-- <div id="deleteEmployeeModal" class="modal fade">
 								<div class="modal-dialog">
@@ -649,7 +651,30 @@
 								</div>
 							</div> --}}
 						</tr> {{/each}}
-
+						{{#each cars }}
+						<tr>
+							<td>
+								<span class="custom-checkbox">
+									<input type="checkbox" id="checkbox4" name="options[]" value="1">
+									<label for="checkbox4"></label>
+								</span>
+							</td>
+							<td>{{name}}</td>
+							<td>{{category }}</td>
+							<td>
+								<a href="/car/detail/{{ _id }}">
+									<img src="{{ image }}" width="150" height="150">
+								</a>
+							</td>
+							<td>{{price}}</td>
+							<td>
+								<a href="/car/edit/{{ _id }}" class="edit"><i class="material-icons"
+										title="Edit">&#xE254;</i></a>
+								<a href="/car/delete/{{_id}}"
+									onclick="return confirm('Are you sure to delete this student ?');" class="delete"><i
+										class="material-icons" title="Delete">&#xE872;</i></a>
+							</td>
+						</tr> {{/each}}
 					</tbody>
 				</table>
 				<div class="clearfix">

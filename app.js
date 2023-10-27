@@ -6,26 +6,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var customerRouter = require('./routes/customer');
-var loginRouter = require('./routes/login');
-var robotRouter = require('./routes/robot');
-var toyRouter = require('./routes/toy');
-var figureRouter = require('./routes/figure');
 
 var app = express();
 
-
-var hbs = require('hbs');
-hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
-hbs.registerHelper('equal', require('handlebars-helper-equal'))
-
-
-var mongoose = require("mongoose");
-mongoose.set('strictQuery', false);
-var uri = "mongodb+srv://minhlqgch211344:1q2w3e4r@minh.eafg6qj.mongodb.net/Asm";
-mongoose.connect(uri)
-.then(() => console.log ("Connect to DB succeed !"))
-.catch((err) => console.log (err));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -38,12 +21,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/customer', customerRouter);
-app.use('/login', loginRouter);
-app.use('/toy', toyRouter);
-app.use('/figure', figureRouter);
-app.use('/robot', robotRouter);
 
+// catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
@@ -58,7 +37,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-app.listen (process.env.PORT || 3001);
 
 module.exports = app;

@@ -1,42 +1,32 @@
-<form action="/robot/add" method="post">
+<form action="/car/edit/{{ car._id }}" method="post">
     <div class="form-body">
         <div class="row">
             <div class="form-holder">
                 <div class="form-content">
                     <div class="form-items">
-                        <h3>Add New Product</h3>
+                        <h3>Edit Product</h3>
                         <form class="requires-validation" novalidate>
                             <div class="col-md-12">
                                 <label for="name" class="text-primary">Name</label>
-                                <input class="form-control" type="text" name="name" required minlength="3"
+                                <input class="form-control" type="text" name="name" required value="{{car.name}}" minlength="3"
                                     maxlength="30">
                             </div>
-                            <div>
-                                <label for="name" class="text-primary">Category</label>
-                                <select class="form-control" type="text" name="category" required minlength="3"
-                                    maxlength="30">
-                                    <option value="figure">Figure</option>
-                                    <option value="car">Car</option>
-                                    <option value="robot">Robot</option>
-                                </select>
-                            </div>
-
-                            {{!-- <div class="col-md-12">
+                            <div class="col-md-12">
                                 <label for="category" class="text-primary">Category</label>
-                                <input class="form-control" type="text" name="category" required minlength="3"
+                                <input class="form-control" type="text" name="category" required value="{{car.category}}" minlength="3"
                                     maxlength="30">
-                            </div> --}}
+                            </div>
                             <div class="col-md-12">
                                 <label for="image" class="text-primary">Image</label>
-                                <input class="form-control" type="text" name="image" required>
+                                <input class="form-control" type="url" name="image" required value="{{car.image}}">
                             </div>
                             <div class="col-md-12">
                                 <label for="price" class="text-primary">Price</label>
-                                <input class="form-control" type="text" name="price" required minlength="3"
+                                <input class="form-control" type="text" name="price" required value="{{car.price}} "minlength="3"
                                     maxlength="30">
                             </div>
                             <div class="form-button mt-3">
-                                <button id="submit" type="submit" class="btn btn-primary">Add</button>
+                                <button id="submit" type="submit" class="btn btn-primary">Edit</button>
                             </div>
                         </form>
                     </div>
@@ -95,14 +85,13 @@
         padding: 40px;
         display: inline-block;
         width: 100%;
-        min-width: 600px;
+        min-width: 540px;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 10px;
         text-align: left;
         -webkit-transition: all 0.4s ease;
         transition: all 0.4s ease;
-        margin-top: -100px;
     }
 
     .form-content h3 {
@@ -138,7 +127,7 @@
     .form-content input[type=email],
     .form-content select {
         width: 100%;
-        padding: 5px 5px;
+        padding: 9px 20px;
         text-align: left;
         border: 0;
         outline: 0;
@@ -149,15 +138,7 @@
         color: #8D8D8D;
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
-        margin-top: 5px;
-    }
-
-    button#submit {
-        /* margin-left: 204px; */
-        display: block;
-        margin: 0 auto;
-        margin: top;
-        margin-top: 30px;
+        margin-top: 16px;
     }
 
 

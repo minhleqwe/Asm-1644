@@ -1,50 +1,21 @@
-<form action="/robot/add" method="post">
-    <div class="form-body">
-        <div class="row">
-            <div class="form-holder">
-                <div class="form-content">
-                    <div class="form-items">
-                        <h3>Add New Product</h3>
-                        <form class="requires-validation" novalidate>
-                            <div class="col-md-12">
-                                <label for="name" class="text-primary">Name</label>
-                                <input class="form-control" type="text" name="name" required minlength="3"
-                                    maxlength="30">
-                            </div>
-                            <div>
-                                <label for="name" class="text-primary">Category</label>
-                                <select class="form-control" type="text" name="category" required minlength="3"
-                                    maxlength="30">
-                                    <option value="figure">Figure</option>
-                                    <option value="car">Car</option>
-                                    <option value="robot">Robot</option>
-                                </select>
-                            </div>
-
-                            {{!-- <div class="col-md-12">
-                                <label for="category" class="text-primary">Category</label>
-                                <input class="form-control" type="text" name="category" required minlength="3"
-                                    maxlength="30">
-                            </div> --}}
-                            <div class="col-md-12">
-                                <label for="image" class="text-primary">Image</label>
-                                <input class="form-control" type="text" name="image" required>
-                            </div>
-                            <div class="col-md-12">
-                                <label for="price" class="text-primary">Price</label>
-                                <input class="form-control" type="text" name="price" required minlength="3"
-                                    maxlength="30">
-                            </div>
-                            <div class="form-button mt-3">
-                                <button id="submit" type="submit" class="btn btn-primary">Add</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<form action="/car/detail/{{_id}}" method="post">
+<div class="container col-md-10">
+	<div class="row" style="display: flex; gap: 50px; justify-content: center;">
+		<div class="col-md-5">
+			<img src="{{car.image}}" width="300" height="300" alt="this is product image">
+		</div>
+		<div class="col-md-7 card bg-warning">
+			<h1 class="text-center bg-success">Product information</h1>
+			<h3>Name: {{ car.name }}</h3>
+			<h3>Category: {{car.category}}</h3>
+			<h3>Price: {{ car.price }}</h3>
+            <a href="/customer"><h3>Back To Home</h3></a>
+		</div>
+	</div>
+</div>
 </form>
+
+
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
@@ -61,7 +32,7 @@
     html,
     body {
         height: 100%;
-        background-color: #152733;
+        background-color: #b0bcb4;
         overflow: hidden;
     }
 
@@ -95,14 +66,13 @@
         padding: 40px;
         display: inline-block;
         width: 100%;
-        min-width: 600px;
+        min-width: 540px;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 10px;
         text-align: left;
         -webkit-transition: all 0.4s ease;
         transition: all 0.4s ease;
-        margin-top: -100px;
     }
 
     .form-content h3 {
@@ -138,7 +108,7 @@
     .form-content input[type=email],
     .form-content select {
         width: 100%;
-        padding: 5px 5px;
+        padding: 9px 20px;
         text-align: left;
         border: 0;
         outline: 0;
@@ -149,15 +119,7 @@
         color: #8D8D8D;
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
-        margin-top: 5px;
-    }
-
-    button#submit {
-        /* margin-left: 204px; */
-        display: block;
-        margin: 0 auto;
-        margin: top;
-        margin-top: 30px;
+        margin-top: 16px;
     }
 
 

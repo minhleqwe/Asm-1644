@@ -18,7 +18,7 @@
                             </div>
                             <div class="col-md-12">
                                 <label for="image" class="text-primary">Image</label>
-                                <input class="form-control" type="url" name="image" required value="{{figure.image}}">
+                                <input class="form-control" type="text" name="image" required value="{{figure.image}}">
                             </div>
                             <div class="col-md-12">
                                 <label for="price" class="text-primary">Price</label>
@@ -85,13 +85,14 @@
         padding: 40px;
         display: inline-block;
         width: 100%;
-        min-width: 540px;
+        min-width: 600px;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 10px;
         text-align: left;
         -webkit-transition: all 0.4s ease;
         transition: all 0.4s ease;
+        margin-top: -100px;
     }
 
     .form-content h3 {
@@ -127,7 +128,7 @@
     .form-content input[type=email],
     .form-content select {
         width: 100%;
-        padding: 9px 20px;
+        padding: 5px 5px;
         text-align: left;
         border: 0;
         outline: 0;
@@ -138,7 +139,15 @@
         color: #8D8D8D;
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
-        margin-top: 16px;
+        margin-top: 5px;
+    }
+
+    button#submit {
+        /* margin-left: 204px; */
+        display: block;
+        margin: 0 auto;
+        margin: top;
+        margin-top: 30px;
     }
 
 

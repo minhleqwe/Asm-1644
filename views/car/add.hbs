@@ -1,4 +1,4 @@
-<form action="/robot/add" method="post">
+<form action="/car/add" method="post">
     <div class="form-body">
         <div class="row">
             <div class="form-holder">
@@ -11,21 +11,12 @@
                                 <input class="form-control" type="text" name="name" required minlength="3"
                                     maxlength="30">
                             </div>
-                            <div>
-                                <label for="name" class="text-primary">Category</label>
-                                <select class="form-control" type="text" name="category" required minlength="3"
-                                    maxlength="30">
-                                    <option value="figure">Figure</option>
-                                    <option value="car">Car</option>
-                                    <option value="robot">Robot</option>
-                                </select>
-                            </div>
 
-                            {{!-- <div class="col-md-12">
+                            <div class="col-md-12">
                                 <label for="category" class="text-primary">Category</label>
                                 <input class="form-control" type="text" name="category" required minlength="3"
                                     maxlength="30">
-                            </div> --}}
+                            </div>
                             <div class="col-md-12">
                                 <label for="image" class="text-primary">Image</label>
                                 <input class="form-control" type="text" name="image" required>

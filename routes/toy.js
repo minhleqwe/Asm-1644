@@ -5,15 +5,17 @@ var router = express.Router();
 var express = require('express');
 const UserModel = require('../models/usermodel');
 var router = express.Router();
-
+var carmodel = require("../models/carmodel")
 
 router.get('/', async (req, res) => {
    var robots = await robotmodel.find();
    var figures = await figuremodel.find();
+   var cars = await carmodel.find();
    console.log(figures);
    res.render('toy/index', { 
       figures: figures,
       robots: robots,
+      cars: cars,
     });
 })
 router.get('/detail/:id', async (req, res) => {
@@ -66,10 +68,12 @@ router.post('/search', async (req, res) => {
    var keyword = req.body.name;
    var figures = await figuremodel.find({ name: new RegExp(keyword, "i") });
    var robots = await robotmodel.find({ name: new RegExp(keyword, "i") });
+   var cars = await carmodel.find({ name: new RegExp(keyword, "i") });
    console.log(figures);
    res.render('toy/index', { 
       figures: figures,
       robots: robots,
+      cars: cars,
     });
 })
 
